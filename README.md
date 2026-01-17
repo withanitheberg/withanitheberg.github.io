@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,5 +8,3 @@
 <body>
     <!-- Put your PNG file in the same folder as this HTML file -->
     <img src="rosie poster copy2.png" alt="old time band">
-</body>
-</html>
