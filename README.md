@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-   <p>enter title here</p>
+  <!--
+    <p>enter title here</p>
 </head>
 <body>
     <!-- Put your PNG file in the same folder as this HTML file -->
