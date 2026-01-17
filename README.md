@@ -6,6 +6,6 @@
 </head>
 <body>
     <!-- Put your PNG file in the same folder as this HTML file -->
-    <img src="image.png" alt="My PNG image">
+    <img src="rosie poster copy2.png" alt="old time band">
 </body>
 </html>
