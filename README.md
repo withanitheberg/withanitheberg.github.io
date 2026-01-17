@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Single Image Page</title>
+   <p>enter title here</p>
 </head>
 <body>
     <!-- Put your PNG file in the same folder as this HTML file -->
