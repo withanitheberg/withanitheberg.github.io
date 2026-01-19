@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>THE BIG HOEDOWN - ITHACA OLD-TIME GATHERING</title>
+
+  <!-- Make layout responsive on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Mailchimp form styles -->
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+
+  <style type="text/css">
+    /* Make the poster image responsive */
+    .hero-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Make Mailchimp signup block responsive instead of fixed 600px */
+    #mc_embed_signup {
+      background: #fff;
+      clear: left;
+      font: 14px Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Responsive poster image -->
+  <img src="TBH_poster.png" alt="The Big Hoedown Ithaca" class="hero-image" />
+
+  <div id="mc_embed_shell">
+    <div id="mc_embed_signup">
+      <form action="https://SouthHillCider.us9.list-manage.com/subscribe/post?u=0dfcfd8c5b0549c357038133b&amp;id=2e872b3f69&amp;f_id=00e0d0e3f0"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate"
+            target="_blank">
+        <div id="mc_embed_signup_scroll">
+          <h2>Subscribe</h2>
+          <div class="indicates-required">
+            <span class="asterisk">*</span> indicates required
+          </div>
+
+          <div class="mc-field-group">
+            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
+          </div>
+
+          <div class="mc-field-group">
+            <label for="mce-FNAME">First Name </label>
+            <input type="text" name="FNAME" class="text" id="mce-FNAME" value="">
+          </div>
+
+          <div class="mc-field-group">
+            <label for="mce-LNAME">Last Name </label>
+            <input type="text" name="LNAME" class="text" id="mce-LNAME" value="">
+          </div>
+
+          <div class="mc-field-group">
+            <label for="mce-MMERGE3">Zipcode </label>
+            <input type="zip" name="MMERGE3" class="zip" id="mce-MMERGE3" value="">
+          </div>
+
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none;"></div>
+            <div class="response" id="mce-success-response" style="display:none;"></div>
+          </div>
+
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+          <div aria-hidden="true" style="position:absolute; left:-5000px;">
+            <input type="text" name="b_0dfcfd8c5b0549c357038133b_2e872b3f69" tabindex="-1" value="">
+          </div>
+
+          <div class="clear">
+            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Mailchimp script -->
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+  <script type="text/javascript">
+    (function($) {
+      window.fnames = new Array();
+      window.ftypes = new Array();
+      fnames[0]='EMAIL';ftypes[0]='email';
+      fnames[1]='FNAME';ftypes[1]='text';
+      fnames[2]='LNAME';ftypes[2]='text';
+      fnames[3]='MMERGE3';ftypes[3]='zip';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+
+    // SMS Phone Multi-Country Functionality
+    if(!window.MC) {
+      window.MC = {};
+    }
+    window.MC.smsPhoneData = {
+      defaultCountryCode: 'US',
+      programs: [],
+      smsProgramDataCountryNames: []
+    };
+
+    function getCountryUnicodeFlag(countryCode) {
+      return countryCode.toUpperCase().replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397))
+    };
+
+    function sanitizeHtml(str) {
+      if (typeof str !== 'string') return '';
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;')
+        .replace(/\//g, '&#x2F;');
+    }
+
+    function sanitizeUrl(url) {
+      if (typeof url !== 'string') return '';
+      const trimmedUrl = url.trim().toLowerCase();
+      if (trimmedUrl.startsWith('javascript:') || trimmedUrl.startsWith('') || trimmedUrl.startsWith('vbscript:')) {
+        return '#';
+      }
+      return url;
+    }
+
+    const getBrowserLanguage = () => {
+      if (!window?.navigator?.language?.split('-')[1]) {
+        return window?.navigator?.language?.toUpperCase();
+      }
+      return window?.navigator?.language?.split('-')[1];
+    };
+
+    function getDefaultCountryProgram(defaultCountryCode, smsProgramData) {
+      if (!smsProgramData || smsProgramData.length === 0) {
+        return null;
+      }
+
+      const browserLanguage = getBrowserLanguage();
+
+      if (browserLanguage) {
+        const foundProgram = smsProgramData.find(
+          (program) => program?.countryCode === browserLanguage,
+        );
+        if (foundProgram) {
+          return foundProgram;
+        }
+      }
+
+      if (defaultCountryCode) {
+        const foundProgram = smsProgramData.find(
+          (program) => program?.countryCode === defaultCountryCode,
+        );
+        if (foundProgram) {
+          return foundProgram;
+        }
+      }
+
+      return smsProgramData[0];
+    }
+
+    function updateSmsLegalText(countryCode, fieldName) {
+      if (!countryCode || !fieldName) {
+        return;
+      }
+
+      const programs = window?.MC?.smsPhoneData?.programs;
+      if (!programs || !Array.isArray(programs)) {
+        return;
+      }
+
+      const program = programs.find(program => program?.countryCode === countryCode);
+      if (!program || !program.requiredTemplate) {
+        return;
+      }
+
+      const legalTextElement = document.querySelector('#legal-text-' + fieldName);
+      if (!legalTextElement) {
+        return;
+      }
+
+      const divRegex = new RegExp('</?[div][^>]*>', 'gi');
+      const template = program.requiredTemplate.replace(divRegex, '');
+
+      legalTextElement.textContent = '';
+      const parts = template.split(/(<a href=".*?" target=".*?">.*?<\/a>)/g);
+      parts.forEach(function(part) {
+        if (!part) return;
+        const anchorMatch = part.match(/<a href="(.*?)" target="(.*?)">(.*?)<\/a>/);
+        if (anchorMatch) {
+          const linkElement = document.createElement('a');
+          linkElement.href = sanitizeUrl(anchorMatch[1]);
+          linkElement.target = sanitizeHtml(anchorMatch[2]);
+          linkElement.textContent = sanitizeHtml(anchorMatch[3]);
+          legalTextElement.appendChild(linkElement);
+        } else {
+          legalTextElement.appendChild(document.createTextNode(part));
+        }
+      });
+    }
+
+    function generateDropdownOptions(smsProgramData) {
+      if (!smsProgramData || smsProgramData.length === 0) {
+        return '';
+      }
+
+      return smsProgramData.map(program => {
+        const flag = getCountryUnicodeFlag(program.countryCode);
+        const countryName = getCountryName(program.countryCode);
+        const callingCode = program.countryCallingCode || '';
+        const sanitizedCountryCode = sanitizeHtml(program.countryCode || '');
+        const sanitizedCountryName = sanitizeHtml(countryName || '');
+        const sanitizedCallingCode = sanitizeHtml(callingCode || '');
+        return '<option value="' + sanitizedCountryCode + '">' + sanitizedCountryName + ' ' + sanitizedCallingCode + '</option>';
+      }).join('');
+    }
+
+    function getCountryName(countryCode) {
+      if (window.MC?.smsPhoneData?.smsProgramDataCountryNames && Array.isArray(window.MC.smsPhoneData.smsProgramDataCountryNames)) {
+        for (let i = 0; i < window.MC.smsPhoneData.smsProgramDataCountryNames.length; i++) {
+          if (window.MC.smsPhoneData.smsProgramDataCountryNames[i].code === countryCode) {
+            return window.MC.smsPhoneData.smsProgramDataCountryNames[i].name;
+          }
+        }
+      }
+      return countryCode;
+    }
+
+    function getDefaultPlaceholder(countryCode) {
+      if (!countryCode || typeof countryCode !== 'string') {
+        return '+1 000 000 0000';
+      }
+
+      var mockPlaceholders = [
+        { countryCode: 'US', placeholder: '+1 000 000 0000' },
+        { countryCode: 'GB', placeholder: '+44 0000 000000' },
+        { countryCode: 'CA', placeholder: '+1 000 000 0000' },
+        { countryCode: 'AU', placeholder: '+61 000 000 000' },
+        { countryCode: 'DE', placeholder: '+49 000 0000000' },
+        { countryCode: 'FR', placeholder: '+33 0 00 00 00 00' },
+        { countryCode: 'ES', placeholder: '+34 000 000 000' },
+        { countryCode: 'NL', placeholder: '+31 0 00000000' },
+        { countryCode: 'BE', placeholder: '+32 000 00 00 00' },
+        { countryCode: 'CH', placeholder: '+41 00 000 00 00' },
+        { countryCode: 'AT', placeholder: '+43 000 000 0000' },
+        { countryCode: 'IE', placeholder: '+353 00 000 0000' },
+        { countryCode: 'IT', placeholder: '+39 000 000 0000' }
+      ];
+
+      const selectedPlaceholder = mockPlaceholders.find(function(item) {
+        return item && item.countryCode === countryCode;
+      });
+
+      return selectedPlaceholder ? selectedPlaceholder.placeholder : mockPlaceholders[0].placeholder;
+    }
+
+    function updatePlaceholder(countryCode, fieldName) {
+      if (!countryCode || !fieldName) {
+        return;
+      }
+
+      const phoneInput = document.querySelector('#mce-' + fieldName);
+      if (!phoneInput) {
+        return;
+      }
+
+      const placeholder = getDefaultPlaceholder(countryCode);
+      if (placeholder) {
+        phoneInput.placeholder = placeholder;
+      }
+    }
+
+    function updateCountryCodeInstruction(countryCode, fieldName) {
+      updatePlaceholder(countryCode, fieldName);
+    }
+
+    function setDefaultHelpText(countryCode) {
+      const helpTextSpan = document.querySelector('#help-text');
+      if (!helpTextSpan) {
+        return;
+      }
+    }
+
+    function updateHelpTextCountryCode(countryCode, fieldName) {
+      if (!countryCode || !fieldName) {
+        return;
+      }
+      setDefaultHelpText(countryCode);
+    }
+
+    function initializeSmsPhoneDropdown(fieldName) {
+      if (!fieldName || typeof fieldName !== 'string') {
+        return;
+      }
+
+      const dropdown = document.querySelector('#country-select-' + fieldName);
+      const displayFlag = document.querySelector('#flag-display-' + fieldName);
+
+      if (!dropdown || !displayFlag) {
+        return;
+      }
+
+      const smsPhoneData = window.MC?.smsPhoneData;
+      if (smsPhoneData && smsPhoneData.programs && Array.isArray(smsPhoneData.programs)) {
+        dropdown.innerHTML = generateDropdownOptions(smsPhoneData.programs);
+      }
+
+      const defaultProgram = getDefaultCountryProgram(smsPhoneData?.defaultCountryCode, smsPhoneData?.programs);
+      if (defaultProgram && defaultProgram.countryCode) {
+        dropdown.value = defaultProgram.countryCode;
+
+        const flagSpan = displayFlag?.querySelector('#flag-emoji-' + fieldName);
+        if (flagSpan) {
+          flagSpan.textContent = getCountryUnicodeFlag(defaultProgram.countryCode);
+          flagSpan.setAttribute('aria-label', sanitizeHtml(defaultProgram.countryCode) + ' flag');
+        }
+
+        updateSmsLegalText(defaultProgram.countryCode, fieldName);
+        updatePlaceholder(defaultProgram.countryCode, fieldName);
+        updateCountryCodeInstruction(defaultProgram.countryCode, fieldName);
+      }
+
+      var smsNotRequiredRemoveCountryCodeEnabled = true;
+      var smsField = Object.values({
+        "EMAIL": {"name":"EMAIL","type":"email","required":true},
+        "FNAME": {"name":"FNAME","type":"text","required":false},
+        "LNAME": {"name":"LNAME","type":"text","required":false},
+        "MMERGE3": {"name":"MMERGE3","type":"zip","required":false}
+      }).find(function(f) { return f.name === fieldName && f.type === 'smsphone'; });
+
+      var isRequired = smsField ? smsField.required : false;
+      var shouldAppendCountryCode = smsNotRequiredRemoveCountryCodeEnabled ? isRequired : true;
+
+      var phoneInput = document.querySelector('#mce-' + fieldName);
+      if (phoneInput && defaultProgram && defaultProgram.countryCallingCode && shouldAppendCountryCode) {
+        phoneInput.value = defaultProgram.countryCallingCode;
+      }
+
+      displayFlag?.addEventListener('click', function() {
+        dropdown.focus();
+      });
+
+      dropdown?.addEventListener('change', function() {
+        const selectedCountry = this.value;
+        if (!selectedCountry || typeof selectedCountry !== 'string') {
+          return;
+        }
+
+        const flagSpan = displayFlag?.querySelector('#flag-emoji-' + fieldName);
+        if (flagSpan) {
+          flagSpan.textContent = getCountryUnicodeFlag(selectedCountry);
+          flagSpan.setAttribute('aria-label', sanitizeHtml(selectedCountry) + ' flag');
+        }
+
+        const selectedProgram = window.MC?.smsPhoneData?.programs.find(function(program) {
+          return program && program.countryCode === selectedCountry;
+        });
+
+        var smsNotRequiredRemoveCountryCodeEnabled = true;
+        var smsField = Object.values({
+          "EMAIL": {"name":"EMAIL","type":"email","required":true},
+          "FNAME": {"name":"FNAME","type":"text","required":false},
+          "LNAME": {"name":"LNAME","type":"text","required":false},
+          "MMERGE3": {"name":"MMERGE3","type":"zip","required":false}
+        }).find(function(f) { return f.name === fieldName && f.type === 'smsphone'; });
+
+        var isRequired = smsField ? smsField.required : false;
+        var shouldAppendCountryCode = smsNotRequiredRemoveCountryCodeEnabled ? isRequired : true;
+
+        var phoneInput = document.querySelector('#mce-' + fieldName);
+        if (phoneInput && selectedProgram && selectedProgram.countryCallingCode && shouldAppendCountryCode) {
+          phoneInput.value = selectedProgram.countryCallingCode;
+        }
+
+        updateSmsLegalText(selectedCountry, fieldName);
+        updatePlaceholder(selectedCountry, fieldName);
+        updateCountryCodeInstruction(selectedCountry, fieldName);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const smsPhoneFields = document.querySelectorAll('[id^="country-select-"]');
+      smsPhoneFields.forEach(function(dropdown) {
+        const fieldName = dropdown?.id.replace('country-select-', '');
+        initializeSmsPhoneDropdown(fieldName);
+      });
+    });
+  </script>
+</body>
+</html>
